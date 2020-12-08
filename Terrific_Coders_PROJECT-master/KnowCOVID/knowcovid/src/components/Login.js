@@ -1,5 +1,7 @@
 import React from 'react';
 
+import logo from '../assets/KnowCOVIDlogo.png'
+
 const Login = (props) => {
     const { email, setEmail, password, setPassword, handleLogin,
         handleSignup, hasAccount, setHasAccount, emailError, passwordError } = props;
@@ -7,7 +9,8 @@ const Login = (props) => {
     return (
        
         <section className='login'>
-           
+            <div><img src={ logo } width="150" height="150" alt="My_Logo"/></div>
+            
             <div className="loginContainer">
                 <label>Username</label>
                 <input
