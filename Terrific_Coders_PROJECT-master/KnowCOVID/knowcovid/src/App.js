@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import fire from './fire';
 import './App.css';
 import Login from './components/Login';
 import Main from './components/Main';
+import News from './components/News';
 
 const App = () => {
   const [user, setUser] = useState(''); 
@@ -86,9 +88,16 @@ return(
   <div className="App">
    
     {user ? (
-      
-      <Main handleLogout ={handleLogout } user = {user}   />
-      
+      <Router>
+        <Route exact path="/">
+          <Main handleLogout ={handleLogout } user = {user}   />
+        </Route>
+        <Switch>
+        <Route exact path="/news">
+          <News handleLogout ={handleLogout }/>
+        </Route>
+        </Switch>
+      </Router>
     ):(
       <Login 
     email = {email} 

@@ -134,7 +134,7 @@ button {
 
 }
 
-.slogan {
+.heading {
   text-align: center;
   color:white;
   background-color: #ab94db;
@@ -188,6 +188,7 @@ button {
   padding: 10px;
   border: 5px solid gray;
   margin: 0;
+  
 }
 
 .main .newLink{
