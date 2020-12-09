@@ -2,7 +2,6 @@ import string
 from collections import *
 
 fname = input("Enter the file name: ")
-# This is how you write a comment :).
 if len(fname) < 1: fname = 'words.txt'
 fh = open(fname)
 
@@ -14,7 +13,8 @@ SECONDARY = ['hospitals', 'cases', 'max', 'capacity', 'spreading', 'infection', 
              'city', 'doctors', 'staff', 'symptoms', 'spread', 'quarantine', 'trend', 'unemployment', 'surge', 'vaccine',
              'treatment', 'social', 'distancing', 'n95', 'mask', 'covering', 'breathing', 'ventilator', 'ventilators', 'death']
 BAD =       ['White House', 'president', 'senate', 'federal', 'government', 'democrat', 'republican', 'party', 'election',
-             'Constitution', 'Supreme Court']
+             'Constitution', 'Supreme Court']# 'White House' and 'Supreme Court' won't add to the keyword count. 
+                                             # Left as is in order to maintain formulas.
 
 def printNEAT(keyword, example):# prints 5 elements per line
     if (len(example)) <= 5:
@@ -55,18 +55,6 @@ for line in fh:
 list.sort()
 biglist.sort()
 
-# print('...THIS IS A SORTED LIST OF ALL WORDS IN THE INPUT TEXT...\n')  # ALPHABETICAL ORDER: INCLUDE REPITITIONS
-# print(biglist)
-
-# print('...THIS IS A SORTED LIST OF UNIQUE WORDS IN THE INPUT TEXT...\n')  # ALPHABETICAL ORDER: DOES NOT INCLUDE REPITITIONS
-# print(list)
-
-
-#These are the word counts for primary, secondary, and bad lists
-
-#allcounts = Counter(biglist)
-#print("\n", allcounts)
-
 print('\n...THIS ARTICLE HAS', bigcount, 'WORDS...\n')  # WORD COUNT
 
 primword_freq = 0
@@ -100,22 +88,55 @@ elif(primword_freq==0 and secword_freq==0 and badword_freq==0):
 else:
     print("This article is a mix of things.")
 
+# default websites
+preferred_websites=['http://www.Look-elsewhere-SORRY.com/',
+                    'https://www.vox.com/',
+                    'https://www.bbc.com/news',
+                    'https://www.sciencenews.org/',
+                    'https://www.buzzfeednews.com/',
+                    'https://www.theguardian.com/us',
+                    'https://www.nbcnews.com/',
+                    'https://apnews.com/',
+                    'https://www.npr.org/sections/news/']
+
+
+# Typical file names for input:
 # 59976 - Good Articles/Article-9.txt
 # 59976 - Automated Articles/Article-9-test.txt
-
 # 59976 - Bad Articles/Bad-Article-9.txt
 # 59976 - Automated Articles/Bad-Article-9-test.txt
 
 
-# Look through 20 articles from Vox with dates from these past two weeks.
-# Get the .txt file from each url.
-# Run the file through PYT_dictionary.py
-# If the output is "This article is good!",
-# save the associated url of the article in a results.txt file .
-# Terminate the search of the 20 articles.
-# If no good articles out of the 20, save the following string in
-# the results.txt file: http://www.no-good-article-for-this-week-SORRY.com
-# Repeat the above steps for the other 8 preffered websites.
-# Upon complete termination of the program, there will be 9 lines
-# in results.txt . Each line has a unique url for each unique
-# preffered website. 
+# python3 PYT_dictionary.py >> results.txt
+# exec(open('hello.py').read())
+
+
+# Using the homepage of our preferred websites (ex. www.vox.com) and the 
+# current date, the NewsAPI will return 20 articles closest to this date. 
+# This will be stored in a Looking-for-good.txt file. 
+# Each article link will be scraped to a .txt file and run through the 
+# PYT_dictionary.py file.  If PYT_dictionary.py returns output 
+# "This article is good!", save the link to a results.txt file. 
+# Repeat the above steps for the other 7 websites. 
+# The final result is a results.txt file with 8 lines. Each line has
+# its own link. 
+
+# Some scenarios to account for: 
+# Lets say for some preferred website, none of the 20 articles 
+# return "This article is good!". If this happens, then iterate 
+# through the same 20 articles again, but once there's an output 
+# of "This article is a mix of things", then store that link to 
+# results.txt and move on. If none of the 20 articles return 
+# "This article is a mix of things.", then the default website 
+# homepage will be stored as the link. 
+
+# Accounting for those scenarios, I (Michael) decided to make
+# a preferred_websites list. If the default website is needed
+# for spot 1 in the news section of our website, then just do
+# preferred_websites[1]. The zero index will contain a 
+# useless string like "http://www.Look-elsewhere-SORRY.com/"
+
+# The results.txt file should go to a folder called:
+# Websites-of-the-Week.
+# A txt files should go to a folder called:
+# Test-Runs-articles.
