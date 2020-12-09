@@ -138,5 +138,8 @@ preferred_websites=['http://www.Look-elsewhere-SORRY.com/',
 
 # The results.txt file should go to a folder called:
 # Websites-of-the-Week.
-# A txt files should go to a folder called:
-# Test-Runs-articles.
+# All txt files should go to a folder called:
+# Test-Runs-Articles.
+# The articles for a given week should be placed
+# in a folder, within Test-Runs-Articles,
+# with a name of the current date (ex. 12092020)
