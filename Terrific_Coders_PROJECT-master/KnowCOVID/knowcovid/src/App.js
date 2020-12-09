@@ -5,6 +5,7 @@ import './App.css';
 import Login from './components/Login';
 import Main from './components/Main';
 import News from './components/News';
+import UserProfile from './components/UserProfile';
 
 const App = () => {
   const [user, setUser] = useState(''); 
@@ -96,9 +97,13 @@ return(
         <Route exact path="/news">
           <News handleLogout ={handleLogout }/>
         </Route>
+        <Route exact path="/userprofile">
+          <UserProfile handleLogout ={handleLogout }/>
+        </Route>
         </Switch>
       </Router>
     ):(
+      <Router>
       <Login 
     email = {email} 
     setEmail = {setEmail} 
@@ -111,6 +116,7 @@ return(
     emailError = {emailError}
     passwordError = {passwordError}
     />
+        </Router>
     )}
   </div>
 );

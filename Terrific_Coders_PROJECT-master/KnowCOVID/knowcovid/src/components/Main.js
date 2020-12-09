@@ -25,26 +25,14 @@ const Main = ({handleLogout, user}) =>{
                     <img src={ profileIcon } width="150" height="150" alt="profileIcon"/>
                     <div className="dropdown-content">
                         <button className="dropdown-button" onClick={handleLogout}>Logout</button>
+                        <Link to="/userprofile"><button className="dropdown-button" >UserProfile</button></Link>
+                      
+                        
                     </div>
                 </div>
             </nav>
 
-            <div className="userprofile">
-                <div className="subBox">
-                    <h1 className="userprofile1">User Profile</h1>
-                    <h3 className="userprofile2">Email: {fire.auth().currentUser.email}</h3>
-                    <h3 className="userprofile2">Created Date: {fire.auth().currentUser.metadata.creationTime}</h3>
-                    <h3 className="userprofile2">Last Login Date: {fire.auth().currentUser.metadata.lastSignInTime}</h3>
-                </div>
-                <h1 class = "heading">Subscribed</h1>
-                
-                <div className = "subBox">
-                <a className = "newLink" target="_blank" href="https://www.vox.com/21552934/moderna-pfizer-covid-19-vaccine-biontech-coronavirus-cold-chain">Vox</a>           
-                <br/>
-                <a className = "newLink" target="_blank" href="https://www.bbc.com/news/business-55017666">BBC</a>
-                </div>
-                
-            </div>
+
 
             <div>
                 <h1 class = "heading">
@@ -62,7 +50,7 @@ const Main = ({handleLogout, user}) =>{
                 <p> Copyright KnowCOVID Inc 2020. All Rights Reserved.</p>
             </div>
 
-
+            
         </div>
         
     );
