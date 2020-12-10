@@ -2,9 +2,7 @@ import string
 from collections import *
 
 # Upon running this file, a directory must be provided to some .txt file.
-fname = input("Enter the file name: ")
-if len(fname) < 1: fname = 'words.txt'
-fh = open(fname)
+#fname = input("Enter the file name: ")
 
 
 
@@ -21,7 +19,7 @@ BAD =       ['White House', 'president', 'senate', 'federal', 'government', 'dem
                                              # Left as is in order to maintain formulas.
 
 # default websites
-preferred_websites=['http://www.Look-elsewhere-SORRY.com/',
+preferred_websites=['https://www.Look-elsewhere-SORRY.com/',
                     'https://www.vox.com/',
                     'https://www.bbc.com/news',
                     'https://www.sciencenews.org/',
@@ -62,56 +60,74 @@ def printNEAT(content_describe, example_list):# prints 5 elements per line
                 print(example_list[i], end =" ")
         print()
 
-def classify_article(example_list1, example_list2, example_list3, url):
-    list = []
-    biglist = []
-    bigcount = 0
-    for line in fh:
-        words = (line.rstrip().lower()).translate(str.maketrans('', '', string.punctuation)).split()
-        for word in words:
-            biglist.append(word)
-            bigcount = bigcount + 1
-            if word in list:
-                continue
-            else:
-                list.append(word)
-    list.sort()
-    biglist.sort()
+# example_list1, example_list2, example_list3, 
+def classify_article(test_runs_date, fileNames, list_of_url):
+    file = open("Websites-of-the-Week/results.txt","r+")
+    file.truncate(0)
+    file.close()
+    fd = open("Websites-of-the-Week/results.txt", "w+")
+    for website_pref in range(0,6):# NewsAPI can't take links from theguardian or sciencenews, its 6 instead of 8.
+        for twenty in range(0,20):
+            fname = "Test-Runs-Articles/"+test_runs_date+"/"+fileNames[website_pref][twenty]
+            #fname="59976 - Bad Articles/Bad-Article-9.txt"
+            if len(fname) < 1: fname = 'words.txt'
+            fh = open(fname)
 
-    # print('\n...THIS ARTICLE HAS', bigcount, 'WORDS...\n')  # WORD COUNT
+            list = []
+            biglist = []
+            bigcount = 0
+            for line in fh:
+                words = (line.rstrip().lower()).translate(str.maketrans('', '', string.punctuation)).split()
+                for word in words:
+                    biglist.append(word)
+                    bigcount = bigcount + 1
+                    if word in list:
+                        continue
+                    else:
+                        list.append(word)
+            list.sort()
+            biglist.sort()
 
-    primword_freq = 0
-    for i in range(len(PRIMARY)):
-        primword_freq = primword_freq + biglist.count(example_list1[i])
-    secword_freq = 0
-    for j in range(len(SECONDARY)):
-        secword_freq = secword_freq + biglist.count(example_list2[j])
-    badword_freq = 0
-    for k in range(len(BAD)):
-        badword_freq = badword_freq + biglist.count(example_list3[k])
+            # print('\n...THIS ARTICLE HAS', bigcount, 'WORDS...\n')  # WORD COUNT
 
-    # print("\nThe number of times a PRIMARY keyword was used:   ", primword_freq)
-    # print("The number of times a SECONDARY keyword was used: ", secword_freq)
-    # print("The number of times a BAD keyword was used:       ", badword_freq)
+            primword_freq = 0
+            for i in range(len(PRIMARY)):
+                primword_freq = primword_freq + biglist.count(PRIMARY[i])
+            secword_freq = 0
+            for j in range(len(SECONDARY)):
+                secword_freq = secword_freq + biglist.count(SECONDARY[j])
+            badword_freq = 0
+            for k in range(len(BAD)):
+                badword_freq = badword_freq + biglist.count(BAD[k])
 
-
-    # Here is a formula for a good article:
-    if (primword_freq>=1 and secword_freq>=6 and badword_freq<=1):
-        print("This article is good!")
-        # return the url here!
-    # otherwise, give interesting feedback:
-    elif(primword_freq>=3 and secword_freq>=10 and badword_freq>=6):
-	    print("This article is politics and corona.")
-    elif(primword_freq==0 and secword_freq<=2 and badword_freq>=2):
-	    print("This article is politics.")
-    elif(primword_freq==0 and secword_freq==0 and badword_freq==0):
-	    print("This article is irrelevant.")
-    else:
-        print("This article is a mix of things.")
+            # print("\nThe number of times a PRIMARY keyword was used:   ", primword_freq)
+            # print("The number of times a SECONDARY keyword was used: ", secword_freq)
+            # print("The number of times a BAD keyword was used:       ", badword_freq)
 
 
-print_keyword_lists("PRIMARY:   ",PRIMARY, "SECONDARY: ", SECONDARY, "BAD:       ", BAD)
-classify_article(PRIMARY, SECONDARY, BAD, 'http://www.Look-elsewhere-SORRY.com/')
+            # Here is a formula for a good article:
+            if(website_pref==2 and twenty==0):
+                fd.write(preferred_websites[3] + "\n")
+            if(website_pref==3 and twenty==0):
+                fd.write(preferred_websites[5] + "\n")
+            if (primword_freq>=1 and secword_freq>=6 and badword_freq<=1):
+                fd.write(list_of_url[(website_pref*20)+twenty] + "\n")
+                break
+                # print("This article is good!")
+                # otherwise, give interesting feedback:
+                #elif(primword_freq>=3 and secword_freq>=10 and badword_freq>=6):
+                #    print("This article is politics and corona.")
+                #elif(primword_freq==0 and secword_freq<=2 and badword_freq>=2):
+                #    print("This article is politics.")
+                #elif(primword_freq==0 and secword_freq==0 and badword_freq==0):
+                #    print("This article is irrelevant.")
+                #else:
+                #    print("This article is a mix of things.")
+    fd.close()
+
+
+# print_keyword_lists("PRIMARY:   ",PRIMARY, "SECONDARY: ", SECONDARY, "BAD:       ", BAD)
+# classify_article(PRIMARY, SECONDARY, BAD, 'https://www.Look-elsewhere-SORRY.com/')
 
 
 

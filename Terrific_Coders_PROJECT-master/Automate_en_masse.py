@@ -2,42 +2,36 @@ import os
 import subprocess 
 from datetime import datetime
 import re
+import PYT_dictionary
+import time
 
-# 
-# all_160_articles=[
-#     ['Article-1-Vox', 'Article-2-Vox', 'Article-3-Vox', 'Article-4-Vox', 'Article-5-Vox', 
-#      'Article-6-Vox', 'Article-7-Vox', 'Article-8-Vox', 'Article-9-Vox', 'Article-10-Vox',
-#      'Article-11-Vox', 'Article-12-Vox', 'Article-13-Vox', 'Article-14-Vox', 'Article-15-Vox', 
-#      'Article-16-Vox', 'Article-17-Vox', 'Article-18-Vox', 'Article-19-Vox', 'Article-20-Vox']
-#     ['Article-1-BBCNews', 'Article-2-BBCNews', 'Article-3-BBCNews', 'Article-4-BBCNews', 'Article-5-BBCNews', 
-#      'Article-6-BBCNews', 'Article-7-BBCNews', 'Article-8-BBCNews', 'Article-9-BBCNews', 'Article-10-BBCNews',
-#      'Article-11-BBCNews', 'Article-12-BBCNews', 'Article-13-BBCNews', 'Article-14-BBCNews', 'Article-15-BBCNews', 
-#      'Article-16-BBCNews', 'Article-17-BBCNews', 'Article-18-BBCNews', 'Article-19-BBCNews', 'Article-20-BBCNews']
-#     ['Article-1-ScienceNews', 'Article-2-ScienceNews', 'Article-3-ScienceNews', 'Article-4-ScienceNews', 'Article-5-ScienceNews', 
-#      'Article-6-ScienceNews', 'Article-7-ScienceNews', 'Article-8-ScienceNews', 'Article-9-ScienceNews', 'Article-10-ScienceNews',
-#      'Article-11-ScienceNews', 'Article-12-ScienceNews', 'Article-13-ScienceNews', 'Article-14-ScienceNews', 'Article-15-ScienceNews', 
-#      'Article-16-ScienceNews', 'Article-17-ScienceNews', 'Article-18-ScienceNews', 'Article-19-ScienceNews', 'Article-20-ScienceNews']
-#     ['Article-1-BuzzfeedNews', 'Article-2-BuzzfeedNews', 'Article-3-BuzzfeedNews', 'Article-4-BuzzfeedNews', 'Article-5-BuzzfeedNews', 
-#      'Article-6-BuzzfeedNews', 'Article-7-BuzzfeedNews', 'Article-8-BuzzfeedNews', 'Article-9-BuzzfeedNews', 'Article-10-BuzzfeedNews',
-#      'Article-11-BuzzfeedNews', 'Article-12-BuzzfeedNews', 'Article-13-BuzzfeedNews', 'Article-14-BuzzfeedNews', 'Article-15-BuzzfeedNews', 
-#      'Article-16-BuzzfeedNews', 'Article-17-BuzzfeedNews', 'Article-18-BuzzfeedNews', 'Article-19-BuzzfeedNews', 'Article-20-BuzzfeedNews']
-#     ['Article-1-TheGuardian', 'Article-2-TheGuardian', 'Article-3-TheGuardian', 'Article-4-TheGuardian', 'Article-5-TheGuardian', 
-#      'Article-6-TheGuardian', 'Article-7-TheGuardian', 'Article-8-TheGuardian', 'Article-9-TheGuardian', 'Article-10-TheGuardian',
-#      'Article-11-TheGuardian', 'Article-12-TheGuardian', 'Article-13-TheGuardian', 'Article-14-TheGuardian', 'Article-15-TheGuardian', 
-#      'Article-16-TheGuardian', 'Article-17-TheGuardian', 'Article-18-TheGuardian', 'Article-19-TheGuardian', 'Article-20-TheGuardian']
-#     ['Article-1-NBCNews', 'Article-2-NBCNews', 'Article-3-NBCNews', 'Article-4-NBCNews', 'Article-5-NBCNews', 
-#      'Article-6-NBCNews', 'Article-7-NBCNews', 'Article-8-NBCNews', 'Article-9-NBCNews', 'Article-10-NBCNews',
-#      'Article-11-NBCNews', 'Article-12-NBCNews', 'Article-13-NBCNews', 'Article-14-NBCNews', 'Article-15-NBCNews', 
-#      'Article-16-NBCNews', 'Article-17-NBCNews', 'Article-18-NBCNews', 'Article-19-NBCNews', 'Article-20-NBCNews']
-#     ['Article-1-APNews', 'Article-2-APNews', 'Article-3-APNews', 'Article-4-APNews', 'Article-5-APNews', 
-#      'Article-6-APNews', 'Article-7-APNews', 'Article-8-APNews', 'Article-9-APNews', 'Article-10-APNews',
-#      'Article-11-APNews', 'Article-12-APNews', 'Article-13-APNews', 'Article-14-APNews', 'Article-15-APNews', 
-#      'Article-16-APNews', 'Article-17-APNews', 'Article-18-APNews', 'Article-19-APNews', 'Article-20-APNews']
-#     ['Article-1-NPRNews', 'Article-2-NPRNews', 'Article-3-NPRNews', 'Article-4-NPRNews', 'Article-5-NPRNews', 
-#      'Article-6-NPRNews', 'Article-7-NPRNews', 'Article-8-NPRNews', 'Article-9-NPRNews', 'Article-10-NPRNews',
-#      'Article-11-NPRNews', 'Article-12-NPRNews', 'Article-13-NPRNews', 'Article-14-NPRNews', 'Article-15-NPRNews', 
-#      'Article-16-NPRNews', 'Article-17-NPRNews', 'Article-18-NPRNews', 'Article-19-NPRNews', 'Article-20-NPRNews']
-#                 ]
+ 
+all_160_articles=[
+    ['Article-1-vox', 'Article-2-vox', 'Article-3-vox', 'Article-4-vox', 'Article-5-vox', 
+      'Article-6-vox', 'Article-7-vox', 'Article-8-vox', 'Article-9-vox', 'Article-10-vox',
+      'Article-11-vox', 'Article-12-vox', 'Article-13-vox', 'Article-14-vox', 'Article-15-vox', 
+      'Article-16-vox', 'Article-17-vox', 'Article-18-vox', 'Article-19-vox', 'Article-20-vox'],
+     ['Article-21-bbc', 'Article-22-bbc', 'Article-23-bbc', 'Article-24-bbc', 'Article-25-bbc', 
+      'Article-26-bbc', 'Article-27-bbc', 'Article-28-bbc', 'Article-29-bbc', 'Article-30-bbc',
+      'Article-31-bbc', 'Article-32-bbc', 'Article-33-bbc', 'Article-34-bbc', 'Article-35-bbc', 
+      'Article-36-bbc', 'Article-37-bbc', 'Article-38-bbc', 'Article-39-bbc', 'Article-40-bbc'],
+     ['Article-41-buzzfeednews', 'Article-42-buzzfeednews', 'Article-43-buzzfeednews', 'Article-44-buzzfeednews', 'Article-45-buzzfeednews', 
+      'Article-46-buzzfeednews', 'Article-47-buzzfeednews', 'Article-48-buzzfeednews', 'Article-49-buzzfeednews', 'Article-50-buzzfeednews',
+      'Article-51-buzzfeednews', 'Article-52-buzzfeednews', 'Article-53-buzzfeednews', 'Article-54-buzzfeednews', 'Article-55-buzzfeednews', 
+      'Article-56-buzzfeednews', 'Article-57-buzzfeednews', 'Article-58-buzzfeednews', 'Article-59-buzzfeednews', 'Article-60-buzzfeednews'],
+     ['Article-61-nbcnews', 'Article-62-nbcnews', 'Article-63-nbcnews', 'Article-64-nbcnews', 'Article-65-nbcnews', 
+      'Article-66-nbcnews', 'Article-67-nbcnews', 'Article-68-nbcnews', 'Article-69-nbcnews', 'Article-70-nbcnews',
+      'Article-71-nbcnews', 'Article-72-nbcnews', 'Article-73-nbcnews', 'Article-74-nbcnews', 'Article-75-nbcnews', 
+      'Article-76-nbcnews', 'Article-77-nbcnews', 'Article-78-nbcnews', 'Article-79-nbcnews', 'Article-80-nbcnews'],
+     ['Article-81-apnews', 'Article-82-apnews', 'Article-83-apnews', 'Article-84-apnews', 'Article-85-apnews', 
+      'Article-86-apnews', 'Article-87-apnews', 'Article-88-apnews', 'Article-89-apnews', 'Article-90-apnews',
+      'Article-91-apnews', 'Article-92-apnews', 'Article-93-apnews', 'Article-94-apnews', 'Article-95-apnews', 
+      'Article-96-apnews', 'Article-97-apnews', 'Article-98-apnews', 'Article-99-apnews', 'Article-100-apnews'],
+     ['Article-101-npr', 'Article-102-npr', 'Article-103-npr', 'Article-104-npr', 'Article-105-npr', 
+      'Article-106-npr', 'Article-107-npr', 'Article-108-npr', 'Article-109-npr', 'Article-110-npr',
+      'Article-111-npr', 'Article-112-npr', 'Article-113-npr', 'Article-114-npr', 'Article-115-npr', 
+      'Article-116-npr', 'Article-117-npr', 'Article-118-npr', 'Article-119-npr', 'Article-120-npr']
+                 ]
 
 print("Automating en masse ...")
 
@@ -72,11 +66,17 @@ for url in url_list:
         elif url.count('.org') > 0:
             file_name = re.search(r'https://(.*?).org', url).group(1)
 
-    file_name = f'Article-{n}-{file_name}'
+    file_name = f'Article-{n+1}-{file_name}'
     file_full_name = 'Test-Runs-Articles/' + today_date + '/' + file_name
     subprocess.Popen(['python3', 'scrape_article.py', '--url', url, '--file_name', file_full_name])
     n += 1
+    if (n==121):
+        break
 
 print("Script complete!")
+
+(time.sleep(5))
+
+PYT_dictionary.classify_article(today_date, all_160_articles, url_list)
 
 

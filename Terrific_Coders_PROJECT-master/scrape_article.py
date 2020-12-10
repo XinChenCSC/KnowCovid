@@ -62,9 +62,9 @@ file.write(contents)
 # Closing the text file
 file.close() 
 
-print("\n")
-print(f"Script complete. Article contents have been saved to {file_name}.txt")
-print("\n")
+#print("\n")
+#print(f"Script complete. Article contents have been saved to {file_name}.txt")
+#print("\n")
 
 
 # 59976 - Automated Articles/Article-
