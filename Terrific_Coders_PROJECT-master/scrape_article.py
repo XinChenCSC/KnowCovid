@@ -71,5 +71,4 @@ print("\n")
 
 # 59976 - Automated Articles/Bad-Article-
 
-# python3 scrape_article.py --url https://www.vox.com/21552934/moderna-pfizer-covid-19-vaccine-biontech-coronavirus-cold-chain 
-# --file_name "59976 - Automated Articles/Article-1-test.txt"
+# python3 scrape_article.py --url https://apnews.com/cf80c5e08e6c4bba2557d221d7530a45 --file_name "59976 - Automated Articles/Article-89999-test.txt"
