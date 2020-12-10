@@ -57,7 +57,10 @@ for url in url_list:
 
     if url.count('www.') > 0:
         if url.count('.com') > 0:
-            file_name = re.search(r'https://www.(.*?).com', url).group(1)
+            if url.count('www.') > 1:
+                file_name = re.search(r'http://www.(.*?).com', url).group(1)
+            else:
+                file_name = re.search(r'https://www.(.*?).com', url).group(1)
         elif url.count('.org') > 0:
             file_name = re.search(r'https://www.(.*?).org', url).group(1)
     else:
