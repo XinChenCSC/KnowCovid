@@ -1,9 +1,10 @@
 from newsapi import NewsApiClient
 import string
 import sys
+from datetime import datetime
 from collections import *
 
-newsapi = NewsApiClient(api_key='9d6a4dd0080d47759826482fc796e473')
+newsapi = NewsApiClient(api_key='8b03d85158db470394a960d1ded0046b')
 
 all_domains=['vox.com','bbc.com','www.sciencenews.org','buzzfeednews.com',
              'www.theguardian.com/us', 'nbcnews.com', 'apnews.com', 'npr.org']
@@ -15,11 +16,11 @@ all_domains=['vox.com','bbc.com','www.sciencenews.org','buzzfeednews.com',
 # Default link will always be used: www.sciencenews.org
 # Default link will always be used: www.theguardian.com/us
 fd = open("Looking-for-good.txt", "w+")
+today_date = datetime.today().strftime('%Y-%m-%d')
 
 for k in all_domains:
     data = newsapi.get_everything(domains=k,
-                                  from_param='2020-11-25',
-                                  to='2020-12-10',
+                                  to=today_date,
                                   language='en',
                                   sort_by='publishedAt',
                                   page=2)
@@ -31,3 +32,4 @@ for k in all_domains:
         fd.write(y["url"] + "\n" )
 
 fd.close()
+print("All relevant articles on the internet were found.")

@@ -41,7 +41,7 @@ today_date = datetime.today().strftime('%Y_%m_%d-%H_%M_%S')
 
 os.mkdir(path + today_date)
 
-# open looking-for-good.txt and read the lines to list
+# open Looking-for-good.txt and read the lines to list
 
 with open('Looking-for-good.txt') as f:
     url_list = f.readlines()
