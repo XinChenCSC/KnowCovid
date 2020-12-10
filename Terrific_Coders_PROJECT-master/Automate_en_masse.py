@@ -73,7 +73,7 @@ for url in url_list:
     if (n==121):
         break
 
-print("Script complete!")
+print("The most recent news was successfully scraped!")
 
 (time.sleep(5))
 

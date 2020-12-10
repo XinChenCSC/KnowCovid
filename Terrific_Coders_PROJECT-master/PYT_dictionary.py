@@ -124,6 +124,7 @@ def classify_article(test_runs_date, fileNames, list_of_url):
                 #else:
                 #    print("This article is a mix of things.")
     fd.close()
+    print("Content for the week uploaded to results.txt")
 
 
 # print_keyword_lists("PRIMARY:   ",PRIMARY, "SECONDARY: ", SECONDARY, "BAD:       ", BAD)
