@@ -1,8 +1,9 @@
 import string
 from collections import *
+import time
 
 # Upon running this file, a directory must be provided to some .txt file.
-#fname = input("Enter the file name: ")
+# fname = input("Enter the file name: ")
 
 
 
@@ -108,8 +109,10 @@ def classify_article(test_runs_date, fileNames, list_of_url):
             # Here is a formula for a good article:
             if(website_pref==2 and twenty==0):
                 fd.write(preferred_websites[3] + "\n")
+                (time.sleep(2))
             if(website_pref==3 and twenty==0):
                 fd.write(preferred_websites[5] + "\n")
+                (time.sleep(2))
             if (primword_freq>=1 and secword_freq>=6 and badword_freq<=1):
                 fd.write(list_of_url[(website_pref*20)+twenty] + "\n")
                 break
