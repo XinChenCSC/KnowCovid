@@ -81,6 +81,12 @@ classify_article(test_runs_date, fileNames, list_of_url) -
                            article types aren't necessary for the backend
                            but were relevant when trying to find 'formulas'
                            for classification of articles.
+                           
+To run the backend: python3 Internet_to_text.py
+                    python3 Automate_en_masse.py
+                    Look at results.txt in 'Websites-of-the-Week'
+                    
+To run the frontend: ---INSERT HERE JANICE OR XIN---               
 
  
 
