@@ -19,7 +19,8 @@ fd = open("Looking-for-good.txt", "w+")
 today_date = datetime.today().strftime('%Y-%m-%d')
 
 for k in all_domains:
-    data = newsapi.get_everything(domains=k,
+    data = newsapi.get_everything(q='coronavirus',
+                                  domains=k,
                                   to=today_date,
                                   language='en',
                                   sort_by='publishedAt',
