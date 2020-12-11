@@ -3,36 +3,36 @@
 
 ## Overview
 
-KnowCOVID is a news application designed to deliver coronavirus news. Our content
-is exclusive to written news articles; news from videos and podcasts are avoided.
-Articles are updated each week in order to keep content up-to-date. The news
-we provide relates more to the coronavirus pandemic in the U.S rather then
-the situation in other countries. 
+KnowCOVID is a news application designed to deliver coronavirus news. Our content\n
+is exclusive to written news articles; news from videos and podcasts are avoided.\n
+Articles are updated each week in order to keep content up-to-date. The news\n
+we provide relates more to the coronavirus pandemic in the U.S rather then\n
+the situation in other countries. \n
 
 
 ## Getting Started
-This README.md is visible because you have access to 'Terrific_Coders_PROJECT'.
-Please download the repository. All relevant code is in the folder 
-'Terrific_Coders_PROJECT-master'. ---Xin, Janice, I coulden't get the
-website to run. Node modules is missing? Fix this please or replace this
-comment with the appropriate directions for the professor to run the 
-website---
+This README.md is visible because you have access to 'Terrific_Coders_PROJECT'.\n
+Please download the repository. All relevant code is in the folder \n
+'Terrific_Coders_PROJECT-master'. ---Xin, Janice, I coulden't get the\n
+website to run. Node modules is missing? Fix this please or replace this\n
+comment with the appropriate directions for the professor to run the\n 
+website---\n
 
 
 ## Requirements
 
 (___TODO__: List out any technologies needed to run your project_)
 
-All of our code is written in two languages:
-The frontend is written in React.
-The backend in written in Python.
-Make sure you have support for both languages.
-
-The following are commands to run to ensure you have all available 
-libraries:
-npm install
-pip install newsapi-python
-pip install bs4
+All of our code is written in two languages:\n
+The frontend is written in React.\n
+The backend in written in Python.\n
+Make sure you have support for both languages.\n
+\n
+The following are commands to run to ensure you have all available\n
+libraries:\n
+npm install\n
+pip install newsapi-python\n
+pip install bs4\n
 
 
 ## Data Model
