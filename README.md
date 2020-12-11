@@ -11,67 +11,34 @@ the situation in other countries.
 
 
 ## Getting Started
-This README.md is visible because you are in the 'Terrific_Coders_PROJECT'.
+This README.md is visible because you have access to 'Terrific_Coders_PROJECT'.
 Please download the repository. All relevant code is in the folder 
 'Terrific_Coders_PROJECT-master'. ---Xin, Janice, I coulden't get the
-website to run. Node modules is missing? Fix this please or replace
-this comment with the appropriate directions for the professor to
-run the website---
+website to run. Node modules is missing? Fix this please or replace this
+comment with the appropriate directions for the professor to run the 
+website---
 
 
 ## Requirements
 
 (___TODO__: List out any technologies needed to run your project_)
 
+All of our code is written in two languages:
+The frontend is written in React.
+The backend in written in Python.
+Make sure you have support for both languages.
+
+The following are commands to run to ensure you have all available 
+libraries:
+npm install
+pip install newsapi-python
+pip install bs4
+
 
 ## Data Model
 
 (___TODO__: A description of your application's data and their relationships to each other_)
 
-The application will store user, items, and orders.
-
-- Users can have many orders.
-- Orders can have many items.
-
-(___TODO__: Sample resources_)
-
-An Example `User`:
-
-```javascript
-{
-  id: 5,
-  firstName: "Mary",
-  lastName: "Jane"
-}
-```
-
-An Example `Item`:
-
-```javascript
-{
-  id: 3,
-  name: "Lamp",
-  price: "$19.99"
-}
-```
-
-An Example `Order`:
-
-```javascript
-{
-  id: 1,
-  user_id: 5,// a reference to a User object
-}
-```
-
-An Example `OrderItems`:
-
-```javascript
-{
-  item_id: 3,
-  order_id: 1 // References an Order object
-}
-```
 
 ## Site map
 
