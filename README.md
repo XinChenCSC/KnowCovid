@@ -3,42 +3,62 @@
 
 ## Overview
 
-KnowCOVID is a news application designed to deliver coronavirus news. Our content'\n'
-is exclusive to written news articles; news from videos and podcasts are avoided.\n
-Articles are updated each week in order to keep content up-to-date. The news\n
-we provide relates more to the coronavirus pandemic in the U.S rather then\n
-the situation in other countries. \n
+KnowCOVID is a news application designed to deliver coronavirus news. Our content
+is exclusive to written news articles; news from videos and podcasts are avoided.
+Articles are updated each week in order to keep content up-to-date. The news
+we provide relates more to the coronavirus pandemic in the U.S rather then
+the situation in other countries. 
 
 
 ## Getting Started
-This README.md is visible because you have access to 'Terrific_Coders_PROJECT'.\n
-Please download the repository. All relevant code is in the folder \n
-'Terrific_Coders_PROJECT-master'. ---Xin, Janice, I coulden't get the\n
-website to run. Node modules is missing? Fix this please or replace this\n
-comment with the appropriate directions for the professor to run the\n 
-website---\n
+This README.md is visible because you have access to 'Terrific_Coders_PROJECT'.
+Please download the repository. All relevant code is in the folder 
+'Terrific_Coders_PROJECT-master'. ---Xin, Janice, I coulden't get the
+website to run. Node modules is missing? Fix this please or replace this
+comment with the appropriate directions for the professor to run the
+website---
 
 
 ## Requirements
 
 (___TODO__: List out any technologies needed to run your project_)
 
-All of our code is written in two languages:\n
-The frontend is written in React.\n
-The backend in written in Python.\n
-Make sure you have support for both languages.\n
-\n
-The following are commands to run to ensure you have all available\n
-libraries:\n
-npm install\n
-pip install newsapi-python\n
-pip install bs4\n
+All of our code is written in two languages:
+The frontend is written in React.
+The backend in written in Python.
+Make sure you have support for both languages.
+
+The following are commands to run to ensure you have all available
+libraries:
+npm install
+pip install newsapi-python
+pip install bs4
 
 
 ## Data Model
 
 (___TODO__: A description of your application's data and their relationships to each other_)
+Keyword lists and preferred websites are initialized in PYT_dictionary.py .
+Keyword lists are the following:
+PRIMARY   - a few terms that guarentee an article type (in this case its 'coronavirus', 'COVID-19', and 'corona')
+SECONDARY - a long list of terms that are likely to be found alongside primary keywords.
+BAD       - terms that identify a topic to be avoided in article. In our case, the topic is politics.
+Website lists are the following:
+preferred_websites - limit searches of articles on the internet to trusted sources.
 
+The backend is made up of 4 files: 
+Internet_to_text.py, Automate_in_masse.py, scrape_article.py, and PYT_dictionary.py .
+
+Their purpose is as follows:
+Internet_to_text.py - Find links for articles from our trusted sources. Save those
+                      links to a .txt file.
+scrape_article.py -   Converts the content of an article, from some given link, to
+                      .txt files
+PYT_dictionary.py -   Classify articles extracted by scrape_article.py into 
+                      different article types. Makes decisions about whether
+                      the associated website to that .txt file should be 
+                      posted to our website.
+ 
 
 ## Site map
 
