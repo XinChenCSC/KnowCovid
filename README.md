@@ -37,7 +37,6 @@ pip install bs4
 
 ## Data Model
 
-(___TODO__: A description of your application's data and their relationships to each other_)
 Keyword lists and preferred websites are initialized in PYT_dictionary.py .
 Keyword lists are the following:
 PRIMARY   - a few terms that guarentee an article type (in this case its 'coronavirus', 'COVID-19', and 'corona')
@@ -58,6 +57,31 @@ PYT_dictionary.py -   Classify articles extracted by scrape_article.py into
                       different article types. Makes decisions about whether
                       the associated website to that .txt file should be 
                       posted to our website.
+Automate_en_masse.py - By using the output given from Internet_to_text.py, runs
+                       both scrape_article.py and the functions in PYT_dictionary.py
+                       to give a updated list of websites to be used for the week.
+                       This official list is found under the foler 
+                       'Websites-of-the-Week' under the name 'results.txt'
+                       
+Functions available in PYT_dictionary.py include:
+print_NEAT(...) - prints a list with 5 elements per line
+print_keyword_lists(...) - prints 3 keyword lists with 5 words per line.
+classify_article(test_runs_date, fileNames, list_of_url) - 
+                           can classify an article to 5 different types:
+                           "This is a good article!"
+                           "This article is politics and corona."
+                           "This article is politics."
+                           "This article is irrelevant."
+                           "This article is a mix of things."
+                           An article that belongs to our website is a
+                           "...good article!". However, if our extracted
+                           content is not directly related to coronavirus,
+                           it may be appropriate to have a "...mix of things."
+                           article for a preferred website. The other 3 
+                           article types aren't necessary for the backend
+                           but were relevant when trying to find 'formulas'
+                           for classification of articles.
+
  
 
 ## Site map
@@ -82,3 +106,4 @@ Here's an [example](https://www.kauligmedia.com/media/1589/sitemap-01.jpg). Most
 (___TODO__: List any tutorials or material referenced that you've based your code off of_)
 
 ## Authors
+- Michael Salamon, Xin Chen, Janice Ma, Orion Cadri
