@@ -30,6 +30,13 @@ preferred_websites=['https://www.Look-elsewhere-SORRY.com/',
                     'https://apnews.com/',
                     'https://www.npr.org/sections/news/']
 
+preferred_websites_adjust=['https://www.vox.com/',
+                           'https://www.bbc.com/news',
+                           'https://www.buzzfeednews.com/',
+                           'https://www.nbcnews.com/',
+                           'https://apnews.com/',
+                           'https://www.npr.org/sections/news/']
+
 
 
 #                                                   FUNCTIONS
@@ -68,9 +75,10 @@ def classify_article(test_runs_date, fileNames, list_of_url):
     file.close()
     fd = open("Websites-of-the-Week/results.txt", "w+")
     for website_pref in range(0,6):# NewsAPI can't take links from theguardian or sciencenews, its 6 instead of 8.
+        good_find=False
+        (time.sleep(1))
         for twenty in range(0,20):
             fname = "Test-Runs-Articles/"+test_runs_date+"/"+fileNames[website_pref][twenty]
-            #fname="59976 - Bad Articles/Bad-Article-9.txt"
             if len(fname) < 1: fname = 'words.txt'
             fh = open(fname)
 
@@ -113,19 +121,64 @@ def classify_article(test_runs_date, fileNames, list_of_url):
             if(website_pref==3 and twenty==0):
                 fd.write(preferred_websites[5] + "\n")
                 (time.sleep(2))
-            if (primword_freq>=1 and secword_freq>=6 and badword_freq<=1):
+            if(primword_freq>=1 and secword_freq>=6 and badword_freq<=1):
                 fd.write(list_of_url[(website_pref*20)+twenty] + "\n")
+                good_find=True
+                (time.sleep(1))
                 break
-                # print("This article is good!")
-                # otherwise, give interesting feedback:
-                #elif(primword_freq>=3 and secword_freq>=10 and badword_freq>=6):
-                #    print("This article is politics and corona.")
-                #elif(primword_freq==0 and secword_freq<=2 and badword_freq>=2):
-                #    print("This article is politics.")
-                #elif(primword_freq==0 and secword_freq==0 and badword_freq==0):
-                #    print("This article is irrelevant.")
-                #else:
-                #    print("This article is a mix of things.")
+            if(twenty==19 and good_find==False):
+                for retry in range(0,20):
+                    fname = "Test-Runs-Articles/"+test_runs_date+"/"+fileNames[website_pref][retry]
+                    if len(fname) < 1: fname = 'words.txt'
+                    fh = open(fname)
+                    list = []
+                    biglist = []
+                    bigcount = 0
+                    for line in fh:
+                        words = (line.rstrip().lower()).translate(str.maketrans('', '', string.punctuation)).split()
+                        for word in words:
+                            biglist.append(word)
+                            bigcount = bigcount + 1
+                            if word in list:
+                                continue
+                            else:
+                                list.append(word)
+                    list.sort()
+                    biglist.sort()
+                    primword_freq = 0
+                    for i in range(len(PRIMARY)):
+                        primword_freq = primword_freq + biglist.count(PRIMARY[i])
+                    secword_freq = 0
+                    for j in range(len(SECONDARY)):
+                        secword_freq = secword_freq + biglist.count(SECONDARY[j])
+                    badword_freq = 0
+                    for k in range(len(BAD)):
+                        badword_freq = badword_freq + biglist.count(BAD[k])
+                    # give interesting feedback:
+                    if (primword_freq>=1 and secword_freq>=6 and badword_freq<=1):
+                        print("This article is good!")
+                    elif(primword_freq>=3 and secword_freq>=10 and badword_freq>=6):
+                        print("This article is politics and corona.")
+                    elif(primword_freq==0 and secword_freq<=2 and badword_freq>=2):
+                        print("This article is politics.")
+                    elif(primword_freq==0 and secword_freq==0 and badword_freq==0):
+                        print("This article is irrelevant.")
+                    else:
+                        print("This article is a mix of things. It will suffice.")
+                        fd.write(list_of_url[(website_pref*20)+retry] + "\n")
+                        good_find=True
+                        (time.sleep(1))
+                        break
+                if (good_find==False):
+                    fd.write(preferred_websites_adjust[website_pref] + "\n")
+                    good_find=True
+                    (time.sleep(1))
+                    break
+                else:
+                    break
+
+
+
     fd.close()
     print("Content for the week uploaded to results.txt")
 
