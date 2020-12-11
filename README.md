@@ -3,7 +3,7 @@
 
 ## Overview
 
-KnowCOVID is a news application designed to deliver coronavirus news. Our content\n
+KnowCOVID is a news application designed to deliver coronavirus news. Our content'\n'
 is exclusive to written news articles; news from videos and podcasts are avoided.\n
 Articles are updated each week in order to keep content up-to-date. The news\n
 we provide relates more to the coronavirus pandemic in the U.S rather then\n
