@@ -1,17 +1,22 @@
-The content below is an example submission document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
-(___TODO__: Your project name_)
-
-# Shopalot
+# Terrific Coders - KnowCOVID
 
 
 ## Overview
 
-(___TODO__: A brief one or two paragraph, high-level description of your project_)
+KnowCOVID is a news application designed to deliver coronavirus news. Our content
+is exclusive to written news articles; news from videos and podcasts are avoided.
+Articles are updated each week in order to keep content up-to-date. The news
+we provide relates more to the coronavirus pandemic in the U.S rather then
+the situation in other countries. 
 
 
 ## Getting Started
-(___TODO__: These instructions will get you a copy of the project up and running on your local machine for development and testing purposes_)
+This README.md is visible because you are in the 'Terrific_Coders_PROJECT'.
+Please download the repository. All relevant code is in the folder 
+'Terrific_Coders_PROJECT-master'. ---Xin, Janice, I coulden't get the
+website to run. Node modules is missing? Fix this please or replace
+this comment with the appropriate directions for the professor to
+run the website---
 
 
 ## Requirements
