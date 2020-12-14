@@ -11,6 +11,22 @@ import TheGuardian from '../assets/TheGuardianlogo.png'
 import NBCnews from '../assets/NBCNewslogo.png'
 import APnews from '../assets/APNewslogo.png'
 import NPRnews from '../assets/nprNewslogo.png'
+import weeklynews from '../assets/Websites-of-the-Week/results.txt'
+
+// js code to read from the result.txt file
+var weeklylist;
+
+//
+async function getData(){
+    var response = await fetch(weeklynews)
+    .then(r => r.text());
+    return response;
+};
+
+getData().then(text => {
+    //console.log('text decoded:', text);
+    weeklylist = text.toString().split("\n");
+});
 
 const News = ({handleLogout}) =>{
     return(
@@ -22,6 +38,7 @@ const News = ({handleLogout}) =>{
                 <div className="dropdown">
                     <img src={ profileIcon } width="150" height="150" alt="profileIcon"/>
                     <div className="dropdown-content">
+                        <Link to="/userprofile"><button className="dropdown-button" >User Profile</button></Link>
                         <button className="dropdown-button" onClick={handleLogout}>Logout</button>
                     </div>
                 </div>
@@ -32,38 +49,79 @@ const News = ({handleLogout}) =>{
                 </h1>
             </div>
             <div class="list-of-news">
-                <ol>
+            <ol>
                     <div class="news-elements">
-                        <li><img src={ voxlogo } width="200" height="150"/></li>
-                        <div class="NewsLink">Vox link</div>
+                        <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src={ voxlogo } width="200" height="150"/>
+                        <div class="NewsLink">
+                            <a href={weeklylist[0]} target="_blank">
+                                {weeklylist[0]}
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="news-elements">
+                        <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src={ BBCNews } width="200" height="150"/>
+                        <div class="NewsLink">
+                            <a href={weeklylist[1]} target="_blank">
+                                {weeklylist[1]}
+                            </a>
+                        </div>
                     </div>
                     <div class="news-elements">
-                        <li><img src={ BBCNews } width="200" height="150"/></li>
-                        <div class="NewsLink">BBC News link</div>
+                        <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src={ ScienceNews } width="200" height="150"/>
+                        <div class="NewsLink">
+                            <a href={weeklylist[2]} target="_blank">
+                                {weeklylist[2]}
+                            </a>
+                        </div>
                     </div>
                     <div class="news-elements">
-                        <li><img src={ ScienceNews } width="200" height="150"/></li>
-                        <div class="NewsLink">ScienceNews link</div>
+                        <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src={ BuzzFeedNews } width="200" height="150"/>
+                        <div class="NewsLink">
+                            <a href={weeklylist[3]} target="_blank">
+                                {weeklylist[3]}
+                            </a>
+                        </div>
                     </div>
                     <div class="news-elements">
-                        <li><img src={ BuzzFeedNews } width="200" height="150"/></li>
-                        <div class="NewsLink">BuzzFeedNews link</div>
+                        <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src={ TheGuardian } width="200" height="150"/>
+                        <div class="NewsLink">
+                            <a href={weeklylist[4]} target="_blank">
+                                {weeklylist[4]}
+                            </a>
+                        </div>
                     </div>
                     <div class="news-elements">
-                        <li><img src={ TheGuardian } width="200" height="150"/></li>
-                        <div class="NewsLink">The Guardian link</div>
+                        <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src={ NBCnews } width="200" height="150"/>
+                        <div class="NewsLink">
+                            <a href={weeklylist[5]} target="_blank">
+                                {weeklylist[5]}
+                            </a>
+                        </div>
                     </div>
                     <div class="news-elements">
-                        <li><img src={ NBCnews } width="200" height="150"/></li>
-                        <div class="NewsLink">NBC News link</div>
+                        <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src={ APnews } width="200" height="150"/>
+                        <div class="NewsLink">
+                            <a href={weeklylist[6]} target="_blank">
+                                {weeklylist[6]}
+                            </a>
+                        </div>
                     </div>
                     <div class="news-elements">
-                        <li><img src={ APnews } width="200" height="150"/></li>
-                        <div class="NewsLink">AP News link</div>
-                    </div>
-                    <div class="news-elements">
-                        <li><img src={ NPRnews } width="200" height="150"/></li>
-                        <div class="NewsLink">NPR News link</div>
+                        <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src={ NPRnews } width="200" height="150"/>
+                        <div class="NewsLink">
+                            <a href={weeklylist[7]} target="_blank">
+                                {weeklylist[7]}
+                            </a>
+                        </div>
                     </div>
                 </ol>
             </div>

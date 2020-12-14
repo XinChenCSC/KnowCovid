@@ -70,10 +70,12 @@ def printNEAT(content_describe, example_list):# prints 5 elements per line
 
 # example_list1, example_list2, example_list3, 
 def classify_article(test_runs_date, fileNames, list_of_url):
-    file = open("Websites-of-the-Week/results.txt","r+")
+    #file = open("Websites-of-the-Week/results.txt","r+")
+    file = open("KnowCOVID/knowcovid/src/assets/Websites-of-the-Week/results.txt","r+")
     file.truncate(0)
     file.close()
-    fd = open("Websites-of-the-Week/results.txt", "w+")
+    #fd = open("Websites-of-the-Week/results.txt", "w+")
+    fd = open("KnowCOVID/knowcovid/src/assets/Websites-of-the-Week/results.txt", "w+")
     for website_pref in range(0,6):# NewsAPI can't take links from theguardian or sciencenews, its 6 instead of 8.
         good_find=False
         just_in_case='empty'

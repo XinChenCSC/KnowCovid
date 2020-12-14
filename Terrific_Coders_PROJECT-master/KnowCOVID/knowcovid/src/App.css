@@ -203,3 +203,7 @@ button {
 .main .userprofile2{
   color: white;
 }
+
+a:visited {
+  color: blue;
+}

@@ -24,9 +24,10 @@ const Main = ({handleLogout, user}) =>{
                 <div className="dropdown">
                     <img src={ profileIcon } width="150" height="150" alt="profileIcon"/>
                     <div className="dropdown-content">
+                        <Link to="/userprofile"><button className="dropdown-button" >User Profile</button></Link>
+                        <Link to="/news"><button className="dropdown-button">News</button></Link> 
                         <button className="dropdown-button" onClick={handleLogout}>Logout</button>
-                        <Link to="/userprofile"><button className="dropdown-button" >UserProfile</button></Link>
-                      
+
                         
                     </div>
                 </div>
