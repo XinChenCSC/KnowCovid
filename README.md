@@ -97,12 +97,11 @@ Functions available in PYT_dictionary.py include:
 * print_NEAT(...) - prints a list with 5 elements per line
 * print_keyword_lists(...) - prints 3 keyword lists with 5 words per line.
 * classify_article(test_runs_date, fileNames, list_of_url) - can classify an article to 5 different types:
-                           
-      1. "This is a good article!"
-      2. "This article is politics and corona."
-      3. "This article is politics."
-      4. "This article is irrelevant."
-      5. "This article is a mix of things."
+1. "This is a good article!"
+2. "This article is politics and corona."
+3. "This article is politics."
+4. "This article is irrelevant."
+5. "This article is a mix of things."
                            
 An article that belongs to our website is a "...good article!". However, if our extracted content is not directly related to coronavirus, it may be appropriate to have a "...mix of things." article for a preferred website. The other 3 article types aren't necessary for the backend but were relevant when trying to find 'formulas' for classification of articles.
                            
@@ -111,7 +110,7 @@ An article that belongs to our website is a "...good article!". However, if our 
 
 Here is a site map that shows how pages are related to each other, what content names of pages contains, and where they flow to:
 
-           ![](KnowCOVID_SiteMap.png)
+![](KnowCOVID_SiteMap.png)
 
 ## User Stories or Use Cases
 
