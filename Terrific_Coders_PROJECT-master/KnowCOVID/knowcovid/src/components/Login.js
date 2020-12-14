@@ -9,9 +9,9 @@ const Login = (props) => {
     return (
        
         <section className='login'>
-            <div><img src={ logo } width="150" height="150" alt="My_Logo"/></div>
             
             <div className="loginContainer">
+                <div align= "middle"><img src={ logo } width="150" height="150" alt="My_Logo"/></div>
                 <label>Username</label>
                 <input
                     type="text"

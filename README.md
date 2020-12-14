@@ -13,24 +13,41 @@ the situation in other countries.
 ## Getting Started
 This README.md is visible because you have access to 'Terrific_Coders_PROJECT'.
 Please download the repository. All relevant code is in the folder 
-'Terrific_Coders_PROJECT-master'. ---Xin, Janice, I coulden't get the
-website to run. Node modules is missing? Fix this please or replace this
-comment with the appropriate directions for the professor to run the
-website---
+'Terrific_Coders_PROJECT-master'. 
 
+Instructions to run the project:
+1. Download the repository from 'Terrific_Coders_PROJECT-master'
+2. Open command line
+3. To run the frontend server, navigate to the following directory path:
+        /Terrific_Coders_PROJECT/Terrific_Coders_PROJECT-master/KnowCOVID/knowcovid 
+4. Install Node.js
+        npm install
+5. Run the server and open http://localhost:3000 to view it in the browser.
+        npm start 
+6. To stop running the server:
+        control-C
+7. To run the backend, on commandline navigate to the following directory path:
+        /Terrific_Coders_PROJECT/Terrific_Coders_PROJECT-master
+8. Run Internet_to_text
+        python3 Internet_to_text.py
+9. Run Automate_en_masse
+        python3 Automate_en_masse.py
+10. Look at results.txt in 'Websites-of-the-Week' 
 
 ## Requirements
 
 (___TODO__: List out any technologies needed to run your project_)
 
 All of our code is written in two languages:
-The frontend is written in React.
-The backend in written in Python.
+    The frontend is written in React.
+    The backend in written in Python.
+
 Make sure you have support for both languages.
 
 The following are commands to run to ensure you have all available
 libraries:
 npm install
+npm install react-router-dom
 pip install newsapi-python
 pip install bs4
 
@@ -82,13 +99,7 @@ classify_article(test_runs_date, fileNames, list_of_url) -
                            but were relevant when trying to find 'formulas'
                            for classification of articles.
                            
-To run the backend: python3 Internet_to_text.py
-                    python3 Automate_en_masse.py
-                    Look at results.txt in 'Websites-of-the-Week'
                     
-To run the frontend: ---INSERT HERE JANICE OR XIN---               
-
- 
 
 ## Site map
 
@@ -98,18 +109,19 @@ Here's an [example](https://www.kauligmedia.com/media/1589/sitemap-01.jpg). Most
 
 ## User Stories or Use Cases
 
-(___TODO__: Write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format)_)
-
 1. As non-registered user, I can create a new account on the site.
 2. As a user, I can log in to the site.
-3. As a user, I can view items for sale.
-4. As a user, I can add items to a shopping cart.
-5. as a user, I can remove items from a shopping cart.
-6. as a user, I can purchase items in my cart.
+3. As a user, I can access resources featured on KnowCOVID.
+4. As a user, I can view weekly updated news links.
+5. As a user, I can view the user profile.
+6. As a user, I can subscribe to news provider. 
 
 ## References Used
 
-(___TODO__: List any tutorials or material referenced that you've based your code off of_)
+https://reactjs.org/docs/testing-recipes.html#data-fetching
+https://stackoverflow.com/questions/55830414/how-to-read-text-file-in-react
+https://www.bitdegree.org/learn/html-tab
+
 
 ## Authors
 - Michael Salamon, Xin Chen, Janice Ma, Orion Cadri
