@@ -19,37 +19,35 @@ Instructions to run the project:
 1. Download the repository from 'Terrific_Coders_PROJECT-master'
 2. Open command line
 3. To run the frontend server, navigate to the following directory path:
-        /Terrific_Coders_PROJECT/Terrific_Coders_PROJECT-master/KnowCOVID/knowcovid 
+> /Terrific_Coders_PROJECT/Terrific_Coders_PROJECT-master/KnowCOVID/knowcovid 
 4. Install Node.js
-        npm install
+> npm install
 5. Run the server and open http://localhost:3000 to view it in the browser.
-        npm start 
+> npm start 
 6. To stop running the server:
-        control-C
+> control-C
 7. To run the backend, on commandline navigate to the following directory path:
-        /Terrific_Coders_PROJECT/Terrific_Coders_PROJECT-master
+> /Terrific_Coders_PROJECT/Terrific_Coders_PROJECT-master
 8. Run Internet_to_text
-        python3 Internet_to_text.py
+> python3 Internet_to_text.py
 9. Run Automate_en_masse
-        python3 Automate_en_masse.py
+> python3 Automate_en_masse.py
 10. Look at results.txt in 'Websites-of-the-Week' 
 
 ## Requirements
 
-(___TODO__: List out any technologies needed to run your project_)
-
 All of our code is written in two languages:
-    The frontend is written in React.
-    The backend in written in Python.
+* The frontend is written in React.
+* The backend in written in Python.
 
 Make sure you have support for both languages.
 
 The following are commands to run to ensure you have all available
 libraries:
-npm install
-npm install react-router-dom
-pip install newsapi-python
-pip install bs4
+* npm install
+* npm install react-router-dom
+* pip install newsapi-python
+* pip install bs4
 
 
 ## Data Model
