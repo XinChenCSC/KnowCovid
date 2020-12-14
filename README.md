@@ -109,9 +109,9 @@ An article that belongs to our website is a "...good article!". However, if our 
 
 ## Site map
 
-(___TODO__: Draw out a site map that shows how pages are related to each other_)
+Here is a site map that shows how pages are related to each other, what content names of pages contains, and where they flow to:
 
-Here's an [example](https://www.kauligmedia.com/media/1589/sitemap-01.jpg). Mostly looking for the names of pages and where they flow to.
+![](KnowCOVID_SiteMap.png)
 
 ## User Stories or Use Cases
 
