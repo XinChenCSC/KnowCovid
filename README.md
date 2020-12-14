@@ -19,18 +19,25 @@ Instructions to run the project:
 1. Download the repository from 'Terrific_Coders_PROJECT-master'
 2. Open command line
 3. To run the frontend server, navigate to the following directory path:
+
 ``` /Terrific_Coders_PROJECT/Terrific_Coders_PROJECT-master/KnowCOVID/knowcovid ```
 4. Install Node.js
+
 ``` npm install```
 5. Run the server and open http://localhost:3000 to view it in the browser.
+
 ```npm start``` 
 6. To stop running the server:
+
 ```control-C```
 7. To run the backend, on commandline navigate to the following directory path:
+
 ```/Terrific_Coders_PROJECT/Terrific_Coders_PROJECT-master```
 8. Run Internet_to_text
+
 ```python3 Internet_to_text.py```
 9. Run Automate_en_masse
+
 ```python3 Automate_en_masse.py```
 10. Look at results.txt in 'Websites-of-the-Week' 
 
@@ -61,10 +68,23 @@ Keyword lists are the following:
 * preferred_websites - limit searches of articles on the internet to trusted sources.
 
 The backend is made up of 4 files: 
-* Internet_to_text.py
-* Automate_in_masse.py
-* scrape_article.py 
-* PYT_dictionary.py 
+1. Internet_to_text.py
+    * Find links for articles from our trusted sources. Save those
+                      links to a .txt file.
+2. Automate_in_masse.py
+    * Converts the content of an article, from some given link, to
+                      .txt files
+3. scrape_article.py 
+    * Classify articles extracted by scrape_article.py into 
+                      different article types. Makes decisions about whether
+                      the associated website to that .txt file should be 
+                      posted to our website.
+4. PYT_dictionary.py 
+    * By using the output given from Internet_to_text.py, runs
+                       both scrape_article.py and the functions in PYT_dictionary.py
+                       to give a updated list of websites to be used for the week.
+                       This official list is found under the foler 
+                       'Websites-of-the-Week' under the name 'results.txt'
 
 Their purpose is as follows:
 * Internet_to_text.py - Find links for articles from our trusted sources. Save those
