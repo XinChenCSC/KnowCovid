@@ -51,7 +51,8 @@ if contents == '':
     print("\n")
     print("No content was extracted. Script has ben aborted.")
     print("\n")
-    sys.exit()
+    contents = ' '
+    # sys.exit()
     
 # Opening a text file
 file = open(file_name,"w")
