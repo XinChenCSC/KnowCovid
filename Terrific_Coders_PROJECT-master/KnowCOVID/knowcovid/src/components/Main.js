@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/KnowCOVIDlogo.png'
 import landingimg from '../assets/covid_info.png'
 import profileIcon from '../assets/profileIcon.png'
+<<<<<<< HEAD
 import fire from '../fire';
 
 
@@ -10,6 +11,15 @@ import fire from '../fire';
 const Main = ({handleLogout, user}) =>{
     {console.log(user)}
 {  console.log(fire.auth().currentUser.metadata.lastSignInTime)}
+=======
+
+
+
+
+const Main = ({handleLogout, user, email}) =>{
+    
+    
+>>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
   
     return(
        
@@ -45,6 +55,20 @@ const Main = ({handleLogout, user}) =>{
                 <img class = "landing-img" src = {landingimg}/>
                 <Link to="/news"><button>NEWS</button></Link> 
             </div>
+<<<<<<< HEAD
+=======
+            <div className = "paragraph">
+                <p><strong>
+                Welcome to KnowCOVID! Coronavirus (specifically, COVID-19) was first discovered in the East on December of 2019. 
+                It transformed into a pandemic that affected every part of the globe in 2020. With social distancing and quarantine 
+                affecting everyone's lives, it is hard to find a more relevant news topic than coronavirus. The future of how society 
+                copes with this pandemic in 2021 remains uncertain. This makes it all the more important to stay up-to-date with news 
+                of coronavirus from trusted sources. Stay informed and stay safe.
+                -Michael Salamon, Orion Cadri, Janice Ma, Xin Chen
+                </strong>
+                </p>
+            </div>
+>>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
             <div class = "footer">
                 <br/>
                 <p>KnowCOVID</p>

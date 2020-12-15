@@ -5,6 +5,7 @@ import logo from '../assets/KnowCOVIDlogo.png'
 import profileIcon from '../assets/profileIcon.png'
 import fire from '../fire';
 
+<<<<<<< HEAD
 const UserProfile = ({handleLogout}) =>{
     return(
         <section className="main">
@@ -12,6 +13,46 @@ const UserProfile = ({handleLogout}) =>{
             	{/*<img src={ logo } width="150" height="150" alt="My_Logo"/>*/}
                 <Link to="/"><img src={ logo } width="150" height="150" alt="My_Logo"/></Link>
                 {/* <button><h1>NEWS</h1></button> */}
+=======
+
+var links = [];
+
+var linkRef =fire.database().ref('Link');
+
+
+
+    linkRef.on('value',getData);
+ 
+
+
+
+
+function getData(data){
+    
+    var link = data.val();
+    
+    var key = Object.keys(link);
+    
+    for (var i =0; i < key.length; i++){
+        var k = key[i];
+        links[i] = link[k];
+         
+
+    }
+    
+    
+}
+console.log(links)
+
+const UserProfile = ({handleLogout}) =>{
+    return(
+        
+        <section className="main">
+            <nav>
+                
+                <Link to="/"><img src={ logo } width="150" height="150" alt="My_Logo"/></Link>
+             
+>>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                 <div className="dropdown">
                     <img src={ profileIcon } width="150" height="150" alt="profileIcon"/>
                     <div className="dropdown-content">
@@ -30,6 +71,7 @@ const UserProfile = ({handleLogout}) =>{
                 <h1 class = "heading">Subscribed</h1>
                 
                 <div className = "subBox">
+<<<<<<< HEAD
                 <a className = "newLink" target="_blank" href="https://www.vox.com/21552934/moderna-pfizer-covid-19-vaccine-biontech-coronavirus-cold-chain">Vox</a>           
                 <br/>
                 <a className = "newLink" target="_blank" href="https://www.bbc.com/news/business-55017666">BBC</a>
@@ -37,6 +79,21 @@ const UserProfile = ({handleLogout}) =>{
                 
             </div>
            
+=======
+                
+                    {
+                        links.map( l => (
+                            <a className = "newLink" target="_blank" href= {l}>{l} <br/></a> 
+                            
+                        ))
+                        
+                    }
+                
+                </div>
+                
+            </div>
+                   
+>>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
             <div class="heading">
                 <div class="case-stats">
                         <b> Daily COVID Statistics Updates provided by NBC News.</b>

@@ -90,8 +90,15 @@ The backend is made up of 4 files:
     * By using the output given from Internet_to_text.py, runs
                        both scrape_article.py and the functions in PYT_dictionary.py
                        to give a updated list of websites to be used for the week.
+<<<<<<< HEAD
                        This official list is found under the foler 
                        'Websites-of-the-Week' under the name 'results.txt'
+=======
+                       This official list is found under the folder 
+                       'Websites-of-the-Week' under the name 'results.txt'. It is 
+                       located in the directory KnowCOVID/knowcovid/src/assets/
+                       in order to update the links to the website.
+>>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                        
 Functions available in PYT_dictionary.py include:
 * print_NEAT(...) - prints a list with 5 elements per line

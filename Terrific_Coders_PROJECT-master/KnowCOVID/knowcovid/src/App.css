@@ -206,4 +206,20 @@ button {
 
 a:visited {
   color: blue;
+<<<<<<< HEAD
+=======
+}
+.Button_Link{
+  width: 140px;
+  border: 15px;
+  padding: 10px;
+  border: 5px solid gray;
+
+  display: block;
+  margin: 1;
+}
+
+.paragraph{
+  color: white;
+>>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
 }

@@ -2,6 +2,12 @@ import React from 'react';
 
 import logo from '../assets/KnowCOVIDlogo.png'
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
 const Login = (props) => {
     const { email, setEmail, password, setPassword, handleLogin,
         handleSignup, hasAccount, setHasAccount, emailError, passwordError } = props;
