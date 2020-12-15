@@ -1,6 +1,7 @@
 import string
 from collections import *
 import time
+import os
 
 # Upon running this file, a directory must be provided to some .txt file.
 # fname = input("Enter the file name: ")
@@ -81,7 +82,7 @@ def classify_article(test_runs_date, fileNames, list_of_url):
         just_in_case='empty'
         (time.sleep(1))
         for twenty in range(0,20):
-            fname = "Test-Runs-Articles/"+test_runs_date+"/"+fileNames[website_pref][twenty]
+            fname = os.getcwd()+"/Test-Runs-Articles/"+test_runs_date+"/"+fileNames[website_pref][twenty]
             if len(fname) < 1: fname = 'words.txt'
             fh = open(fname)
 

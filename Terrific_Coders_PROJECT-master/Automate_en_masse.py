@@ -78,7 +78,7 @@ for url in url_list:
 
 print("The most recent news was successfully scraped!")
 
-(time.sleep(3))
+(time.sleep(20))
 
 PYT_dictionary.classify_article(today_date, all_160_articles, url_list)
 
