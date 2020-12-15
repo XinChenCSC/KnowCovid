@@ -12,13 +12,6 @@ import NBCnews from '../assets/NBCNewslogo.png'
 import APnews from '../assets/APNewslogo.png'
 import NPRnews from '../assets/nprNewslogo.png'
 import weeklynews from '../assets/Websites-of-the-Week/results.txt'
-<<<<<<< HEAD
-
-// js code to read from the result.txt file
-var weeklylist;
-
-//
-=======
 import fire from '../fire';
 // js code to read from the result.txt file
 var weeklylist;
@@ -85,19 +78,15 @@ function removeData(a){
     //fire.database().ref('Link/'+key[a]).remove();
 }
 
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
 async function getData(){
     var response = await fetch(weeklynews)
     .then(r => r.text());
     return response;
 };
 
-<<<<<<< HEAD
-=======
 
   
 
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
 getData().then(text => {
     //console.log('text decoded:', text);
     weeklylist = text.toString().split("\n");
@@ -132,9 +121,6 @@ const News = ({handleLogout}) =>{
                             <a href={weeklylist[0]} target="_blank">
                                 {weeklylist[0]}
                             </a>
-<<<<<<< HEAD
-                        </div>
-=======
                             <br/>
                             <button class = "Button_Link" onClick = {storeLink0} >Subscribed</button>
                            {/* <button class = "Button_Link"  onClick = {removeData(0)}>Unsubscribed</button>*/}
@@ -142,7 +128,6 @@ const News = ({handleLogout}) =>{
                             
                         </div>
                         
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                     </div>
 
                     <div class="news-elements">
@@ -152,15 +137,11 @@ const News = ({handleLogout}) =>{
                             <a href={weeklylist[1]} target="_blank">
                                 {weeklylist[1]}
                             </a>
-<<<<<<< HEAD
-                        </div>
-=======
                             <br/>
                             <button class = "Button_Link" onClick = {storeLink1} >Subscribed</button>
                             
                         </div>
                         
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                     </div>
                     <div class="news-elements">
                         <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -169,14 +150,10 @@ const News = ({handleLogout}) =>{
                             <a href={weeklylist[2]} target="_blank">
                                 {weeklylist[2]}
                             </a>
-<<<<<<< HEAD
-                        </div>
-=======
                             <br/>
                             <button className = "Button_Link" onClick = {storeLink2} >Subscribed</button>
                         </div>
                         
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                     </div>
                     <div class="news-elements">
                         <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -185,14 +162,10 @@ const News = ({handleLogout}) =>{
                             <a href={weeklylist[3]} target="_blank">
                                 {weeklylist[3]}
                             </a>
-<<<<<<< HEAD
-                        </div>
-=======
                             <br/>
                             <button class = "Button_Link" onClick = {storeLink3} >Subscribed</button>
                         </div>
                         
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                     </div>
                     <div class="news-elements">
                         <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -201,14 +174,10 @@ const News = ({handleLogout}) =>{
                             <a href={weeklylist[4]} target="_blank">
                                 {weeklylist[4]}
                             </a>
-<<<<<<< HEAD
-                        </div>
-=======
                             <br/>
                             <button class = "Button_Link" onClick = {storeLink4} >Subscribed</button>
                         </div>
                         
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                     </div>
                     <div class="news-elements">
                         <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -217,14 +186,10 @@ const News = ({handleLogout}) =>{
                             <a href={weeklylist[5]} target="_blank">
                                 {weeklylist[5]}
                             </a>
-<<<<<<< HEAD
-                        </div>
-=======
                             <br/>
                             <button class = "Button_Link" onClick = {storeLink5} >Subscribed</button>
                         </div>
                         
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                     </div>
                     <div class="news-elements">
                         <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -233,14 +198,10 @@ const News = ({handleLogout}) =>{
                             <a href={weeklylist[6]} target="_blank">
                                 {weeklylist[6]}
                             </a>
-<<<<<<< HEAD
-                        </div>
-=======
                             <br/>
                             <button class = "Button_Link" onClick = {storeLink6} >Subscribed</button>
                         </div>
                         
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                     </div>
                     <div class="news-elements">
                         <li></li>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -249,14 +210,10 @@ const News = ({handleLogout}) =>{
                             <a href={weeklylist[7]} target="_blank">
                                 {weeklylist[7]}
                             </a>
-<<<<<<< HEAD
-                        </div>
-=======
                             <br/>
                             <button class = "Button_Link" onClick = {storeLink7} >Subscribed</button>
                         </div>
                         
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
                     </div>
                 </ol>
             </div>
@@ -271,9 +228,6 @@ const News = ({handleLogout}) =>{
                 </div>
                 <br/>
             </div>
-<<<<<<< HEAD
-
-=======
             <div className = "paragraph">
                 <p><strong>
                 Welcome to KnowCOVID! Coronavirus (specifically, COVID-19) was first discovered in the East on December of 2019. 
@@ -285,7 +239,6 @@ const News = ({handleLogout}) =>{
                 </strong>
                 </p>
             </div>
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
             <div class = "footer">
                 <br/>
                 <p>KnowCOVID</p>

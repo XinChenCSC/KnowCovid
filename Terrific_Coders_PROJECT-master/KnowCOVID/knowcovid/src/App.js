@@ -7,11 +7,8 @@ import Main from './components/Main';
 import News from './components/News';
 import UserProfile from './components/UserProfile';
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
 const App = () => {
   const [user, setUser] = useState(''); 
   const [email, setEmail] = useState('');
@@ -64,10 +61,7 @@ const handleSignup = () =>{
           break;
       }
     });
-<<<<<<< HEAD
-=======
   
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
 };
 const handleLogout = () => {
   fire.auth().signOut();
@@ -95,14 +89,6 @@ useEffect(() => {
 
 
 return(
-<<<<<<< HEAD
-  <div className="App">
-   
-    {user ? (
-      <Router>
-        <Route exact path="/">
-          <Main handleLogout ={handleLogout } user = {user}   />
-=======
   
   <div className="App">
  
@@ -113,7 +99,6 @@ return(
         
         <Route exact path="/">
           <Main handleLogout ={handleLogout } user = {user} email = {email}  />
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
         </Route>
         <Switch>
         <Route exact path="/news">
@@ -123,13 +108,9 @@ return(
           <UserProfile handleLogout ={handleLogout }/>
         </Route>
         </Switch>
-<<<<<<< HEAD
-      </Router>
-=======
 
       </Router>
       
->>>>>>> cffa3bdbec3572838a0a596225641a328dfffb8e
     ):(
       <Router>
       <Login 
