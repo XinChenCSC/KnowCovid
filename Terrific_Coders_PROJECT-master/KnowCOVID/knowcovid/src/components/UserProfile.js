@@ -10,14 +10,7 @@ var links = [];
 
 var linkRef =fire.database().ref('Link');
 
-
-
-    linkRef.on('value',getData);
- 
-
-
-
-
+linkRef.on('value',getData); 
 function getData(data){
     
     var link = data.val();
@@ -33,7 +26,7 @@ function getData(data){
     
     
 }
-console.log(links)
+
 
 const UserProfile = ({handleLogout}) =>{
     return(
@@ -71,7 +64,7 @@ const UserProfile = ({handleLogout}) =>{
                     }
                 
                 </div>
-                
+            
             </div>
                    
             <div class="heading">

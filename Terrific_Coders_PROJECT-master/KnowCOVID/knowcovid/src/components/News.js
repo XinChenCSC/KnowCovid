@@ -20,14 +20,9 @@ var key = [];
 
 var linkRef = fire.database().ref('Link');;
 
-linkRef.once("value")
-  .then(function(snapshot) {
-    var a = snapshot.exists();  // true
-    console.log(a);
-    if(a){
+
        linkRef.on('value',getDatadb);
-    }
-  });
+
 
 
 
