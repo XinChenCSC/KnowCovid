@@ -5,9 +5,9 @@
 
 KnowCOVID is a news application designed to deliver coronavirus news. Our content
 is exclusive to written news articles; news from videos and podcasts are avoided.
-Articles are updated each week in order to keep content up-to-date. The news
+Articles are updated each week to keep content up-to-date. The news
 we provide relates more to the coronavirus pandemic in the U.S rather then
-the situation in other countries. 
+the situation in other countries.
 
 
 ## Getting Started
@@ -94,6 +94,8 @@ The backend is made up of 4 files:
                        'Websites-of-the-Week' under the name 'results.txt'. It is 
                        located in the directory KnowCOVID/knowcovid/src/assets/
                        in order to update the links to the website.
+                       
+                       
                        
 Functions available in PYT_dictionary.py include:
 * print_NEAT(...) - prints a list with 5 elements per line
